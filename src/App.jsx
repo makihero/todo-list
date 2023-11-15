@@ -4,6 +4,12 @@ import Checkbox from "./components/CheckBox";
 import Container from "./components/Container";
 import FormTodo from "./components/FormTodo";
 import TaskList from "./components/TaskList";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Header from "./components/Header";
+// import Home from "./components/Home";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+
 
 function App() {
   // Define el estado local para la casilla de verificación y la lista de tareas
@@ -36,13 +42,24 @@ function App() {
 
   return (
     <Container>
-      <FormTodo onAddTask={addTask} /> {/* Renderiza un formulario para agregar tareas */}
+      {/* <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </div>
+      </Router> */}
+      <FormTodo onAddTask={addTask} />{" "}
+      {/* Renderiza un formulario para agregar tareas */}
       <h4>To do</h4>
       <TaskList
         tasks={tasks} // Pasa la lista de tareas al componente TaskList
         onToggleTask={toggleTask} // Pasa la función para cambiar el estado de completado de una tarea
         onDeleteTask={deleteTask} // Pasa la función para eliminar una tarea
-      />
+        />
     </Container>
   );
 }
